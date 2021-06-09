@@ -1,0 +1,89 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.17.3"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "chemparser",
+					"childIndexes" : 
+					[
+						2
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.17.3"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "chemparser"
+				},
+				{
+					"build" : "chemparser/ast",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.17.3"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "chemparser/ast"
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "chemparser",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "chemparser::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-chemparser-Debug-4da6edbcb5b0dd112cef.json",
+					"name" : "chemparser",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/samsal/Projects/chemparser/build",
+		"source" : "/Users/samsal/Projects/chemparser"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}
