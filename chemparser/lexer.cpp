@@ -9,9 +9,8 @@ lex_error::lex_error(source_range source_range)
   auto const start_position = source_range.start_position();
   auto const diff = source.size() - start_position;
 
-  auto const dump_start = std::string(std::begin(source), start_position);
-  auto const dump_end =
-      std::string(std::begin(source) + start_position, diff);
+  auto const dump_start = std::string(begin(source), start_position);
+  auto const dump_end = std::string(begin(source) + start_position, diff);
 
   message_ = "\nfailure at: " + dump_start + " here -> " + dump_end;
 }

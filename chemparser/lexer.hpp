@@ -97,8 +97,7 @@ lexer::is_done() const noexcept
 constexpr source_range
 lexer::consume() noexcept
 {
-  auto const start = position_;
-  ++position_;
+  auto const start = std::exchange(position_, position_ + 1);
   return {source_, start, position_};
 }
 
@@ -179,11 +178,10 @@ lexer::next_token()
       [this](auto const type, source_range const source_range = {})
   {
     consume_whitespace();
-    past_token_ = token(type, source_range.value());
-    return past_token_;
+    return (past_token_ = token(type, source_range.value()));
   };
 
-  if (position_ == std::size(source_))
+  if (position_ == size(source_))
   {
     return create_token(token::type::end);
   }

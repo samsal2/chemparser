@@ -83,7 +83,7 @@ element_to_string_view(element const element) noexcept
 [[nodiscard]] static element
 string_view_to_element(std::string_view const string_view)
 {
-  if (g_name_element_map.find(string_view) == std::end(g_name_element_map))
+  if (g_name_element_map.find(string_view) == end(g_name_element_map))
   {
     return element::undefined;
   }

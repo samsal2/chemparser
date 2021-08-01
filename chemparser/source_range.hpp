@@ -49,7 +49,7 @@ source_range::source() const noexcept
 source_range::value() const noexcept
 {
   auto const diff = end_position_ - start_position_;
-  return {std::begin(source_) + start_position_, diff};
+  return {begin(source_) + start_position_, diff};
 }
 
 [[nodiscard]] constexpr size_t

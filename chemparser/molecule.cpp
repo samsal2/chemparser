@@ -36,7 +36,7 @@ molecule::get_element_count(element const element) const noexcept
 [[nodiscard]] bool
 molecule::has_element(element const element) const noexcept
 {
-  return elements_.find(element) != std::end(elements_);
+  return elements_.find(element) != end(elements_);
 }
 
 molecule &

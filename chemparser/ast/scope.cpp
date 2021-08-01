@@ -16,10 +16,9 @@ scope::execute() const noexcept
     return molecule.merge(rhs->execute());
   };
 
-  auto const begin = std::cbegin(children_);
-  auto const end = std::cend(children_);
+  auto result = std::accumulate(cbegin(children_), cend(children_),
+                                molecule(), merge_childs);
 
-  auto result = std::accumulate(begin, end, molecule(), merge_childs);
   result.multiply_coefficient(coefficient_);
   return result;
 }

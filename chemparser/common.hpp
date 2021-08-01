@@ -15,7 +15,7 @@ namespace detail
 [[nodiscard]] static std::string
 view_to_string(std::string_view const view) noexcept
 {
-  return std::string(std::begin(view), std::end(view));
+  return std::string(begin(view), end(view));
 }
 
 template <typename This, typename That>
