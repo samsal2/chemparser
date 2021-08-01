@@ -8,8 +8,7 @@
 namespace chemparser::ast
 {
 
-[[nodiscard]] molecule
-scope::execute() const noexcept
+[[nodiscard]] molecule scope::execute() const noexcept
 {
   auto const merge_childs = [](auto molecule, auto const & rhs)
   {
@@ -23,8 +22,7 @@ scope::execute() const noexcept
   return result;
 }
 
-void
-scope::add_child(std::unique_ptr<node> child) noexcept
+void scope::add_child(std::unique_ptr<node> child) noexcept
 {
   children_.push_back(std::move(child));
 }

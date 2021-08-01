@@ -15,8 +15,7 @@ lex_error::lex_error(source_range source_range)
   message_ = "\nfailure at: " + dump_start + " here -> " + dump_end;
 }
 
-[[nodiscard]] char const *
-lex_error::what() const noexcept
+[[nodiscard]] char const * lex_error::what() const noexcept
 {
   return message_.c_str();
 }

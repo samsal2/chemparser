@@ -15,14 +15,12 @@ parse_error::parse_error(token token, std::string_view message)
   message_ = "Token was: " + type_string + "\n" + msg_string;
 }
 
-[[nodiscard]] char const *
-parse_error::what() const noexcept
+[[nodiscard]] char const * parse_error::what() const noexcept
 {
   return message_.c_str();
 }
 
-[[nodiscard]] std::unique_ptr<ast::node>
-parser::parse_scope()
+[[nodiscard]] std::unique_ptr<ast::node> parser::parse_scope()
 {
   auto current_scope = std::make_unique<ast::scope>();
 
@@ -58,8 +56,7 @@ parser::parse_scope()
   }
 }
 
-[[nodiscard]] std::unique_ptr<ast::node>
-parser::parse_atom()
+[[nodiscard]] std::unique_ptr<ast::node> parser::parse_atom()
 {
   auto const element_token = consume(token::type::element);
   auto const element_value = element_token.value();
@@ -77,8 +74,7 @@ parser::parse_atom()
   return std::make_unique<ast::atom>(element, count);
 }
 
-[[nodiscard]] count_type
-parser::parse_coefficient()
+[[nodiscard]] count_type parser::parse_coefficient()
 {
   auto const count_token = consume(token::type::coefficient);
   auto const count_value = count_token.value();

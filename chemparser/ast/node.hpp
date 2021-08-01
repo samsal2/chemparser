@@ -13,13 +13,10 @@ public:
   node(node const & other) = default;
   node(node && other) = default;
 
-  node &
-  operator=(node const & other) = default;
-  node &
-  operator=(node && other) = default;
+  node & operator=(node const & other) = default;
+  node & operator=(node && other) = default;
 
-  [[nodiscard]] virtual molecule
-  execute() const noexcept = 0;
+  [[nodiscard]] virtual molecule execute() const noexcept = 0;
 
   virtual ~node();
 };

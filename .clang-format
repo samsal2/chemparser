@@ -2,7 +2,6 @@
 BasedOnStyle: LLVM
 BreakBeforeBraces: Allman
 ColumnLimit: 78
-AlwaysBreakAfterReturnType: All
 PointerAlignment: Middle
 AlwaysBreakTemplateDeclarations: Yes
 UseTab: Never

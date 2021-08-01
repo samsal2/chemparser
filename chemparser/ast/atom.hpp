@@ -18,8 +18,7 @@ public:
   {
   }
 
-  [[nodiscard]] molecule
-  execute() const noexcept override;
+  [[nodiscard]] molecule execute() const noexcept override;
 
 private:
   count_type count_ = 1;

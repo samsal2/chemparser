@@ -12,8 +12,7 @@ public:
   {
   }
 
-  [[nodiscard]] molecule
-  interpret();
+  [[nodiscard]] molecule interpret();
 
 private:
   parser parser_;

@@ -13,17 +13,13 @@ public:
   constexpr source_range(std::string_view source, size_t start_position,
                          size_t end_position);
 
-  [[nodiscard]] constexpr std::string_view
-  value() const noexcept;
+  [[nodiscard]] constexpr std::string_view value() const noexcept;
 
-  [[nodiscard]] constexpr std::string_view
-  source() const noexcept;
+  [[nodiscard]] constexpr std::string_view source() const noexcept;
 
-  [[nodiscard]] constexpr size_t
-  start_position() const noexcept;
+  [[nodiscard]] constexpr size_t start_position() const noexcept;
 
-  [[nodiscard]] constexpr size_t
-  end_position() const noexcept;
+  [[nodiscard]] constexpr size_t end_position() const noexcept;
 
 private:
   std::string_view source_;
@@ -39,27 +35,23 @@ constexpr source_range::source_range(std::string_view const source,
 {
 }
 
-[[nodiscard]] constexpr std::string_view
-source_range::source() const noexcept
+[[nodiscard]] constexpr std::string_view source_range::source() const noexcept
 {
   return source_;
 }
 
-[[nodiscard]] constexpr std::string_view
-source_range::value() const noexcept
+[[nodiscard]] constexpr std::string_view source_range::value() const noexcept
 {
   auto const diff = end_position_ - start_position_;
   return {begin(source_) + start_position_, diff};
 }
 
-[[nodiscard]] constexpr size_t
-source_range::start_position() const noexcept
+[[nodiscard]] constexpr size_t source_range::start_position() const noexcept
 {
   return start_position_;
 }
 
-[[nodiscard]] constexpr size_t
-source_range::end_position() const noexcept
+[[nodiscard]] constexpr size_t source_range::end_position() const noexcept
 {
   return end_position_;
 }

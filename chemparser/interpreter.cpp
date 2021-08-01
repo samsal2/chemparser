@@ -3,8 +3,7 @@
 namespace chemparser
 {
 
-[[nodiscard]] molecule
-interpreter::interpret()
+[[nodiscard]] molecule interpreter::interpret()
 {
   if (parser_.current_type() != token::type::coefficient)
   {

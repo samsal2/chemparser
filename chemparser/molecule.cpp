@@ -5,15 +5,14 @@
 namespace chemparser
 {
 
-molecule &
-molecule::set_coefficient(count_type const coefficient) noexcept
+molecule & molecule::set_coefficient(count_type const coefficient) noexcept
 {
   coefficient_ = coefficient;
   return *this;
 }
 
-molecule &
-molecule::add_element(element const element, count_type const count) noexcept
+molecule & molecule::add_element(element const element,
+                                 count_type const count) noexcept
 {
   if (has_element(element))
   {
@@ -33,14 +32,12 @@ molecule::get_element_count(element const element) const noexcept
   return elements_.at(element) * coefficient_;
 }
 
-[[nodiscard]] bool
-molecule::has_element(element const element) const noexcept
+[[nodiscard]] bool molecule::has_element(element const element) const noexcept
 {
   return elements_.find(element) != end(elements_);
 }
 
-molecule &
-molecule::merge(molecule const & other) noexcept
+molecule & molecule::merge(molecule const & other) noexcept
 {
   for (auto & [element, count] : elements_)
   {
@@ -57,8 +54,7 @@ molecule::merge(molecule const & other) noexcept
   return *this;
 }
 
-[[nodiscard]] molecule
-merge(molecule lhs, molecule const & rhs) noexcept
+[[nodiscard]] molecule merge(molecule lhs, molecule const & rhs) noexcept
 {
   // NOTE(samuel): no NRVO
   lhs.merge(rhs);
@@ -71,8 +67,7 @@ molecule::multiply_coefficient(count_type const coefficient) noexcept
   return *this;
 }
 
-[[nodiscard]] std::string
-molecule::as_string() const noexcept
+[[nodiscard]] std::string molecule::as_string() const noexcept
 {
   std::string str;
 
@@ -89,8 +84,8 @@ molecule::as_string() const noexcept
   return str;
 }
 
-std::ostream &
-operator<<(std::ostream & os, molecule const & molecule) noexcept
+std::ostream & operator<<(std::ostream & os,
+                          molecule const & molecule) noexcept
 {
   os << molecule.as_string();
   return os;

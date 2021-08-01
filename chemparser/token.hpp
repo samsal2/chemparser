@@ -24,14 +24,12 @@ public:
 
   constexpr token(type type, std::string_view value);
 
-  [[nodiscard]] constexpr type
-  get_type() const noexcept;
+  [[nodiscard]] constexpr type get_type() const noexcept;
 
   [[nodiscard]] constexpr std::string_view
   get_type_as_string() const noexcept;
 
-  [[nodiscard]] constexpr std::string_view
-  value() const noexcept;
+  [[nodiscard]] constexpr std::string_view value() const noexcept;
 
 private:
   type type_ = type::undefined;
@@ -43,8 +41,7 @@ constexpr token::token(type const type, std::string_view const value)
 {
 }
 
-[[nodiscard]] constexpr token::type
-token::get_type() const noexcept
+[[nodiscard]] constexpr token::type token::get_type() const noexcept
 {
   return type_;
 }
@@ -77,14 +74,12 @@ token::get_type_as_string() const noexcept
   }
 }
 
-[[nodiscard]] constexpr std::string_view
-token::value() const noexcept
+[[nodiscard]] constexpr std::string_view token::value() const noexcept
 {
   return value_;
 }
 
-static std::ostream &
-operator<<(std::ostream & os, token const token)
+static std::ostream & operator<<(std::ostream & os, token const token)
 {
   os << "type: " << token.get_type_as_string()
      << ", value: " << token.value();
