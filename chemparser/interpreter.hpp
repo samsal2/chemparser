@@ -8,15 +8,15 @@ namespace chemparser
 class interpreter
 {
 public:
-    explicit interpreter(parser parser) : parser_(parser)
-    {
-    }
+  explicit interpreter(parser parser) : parser_(parser)
+  {
+  }
 
-    [[nodiscard]] molecule
-    interpret();
+  [[nodiscard]] molecule
+  interpret();
 
 private:
-    parser parser_;
+  parser parser_;
 };
 
 } // namespace chemparser
