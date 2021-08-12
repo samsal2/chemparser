@@ -81,14 +81,16 @@ element_to_string_view(element const element) noexcept
 }
 
 [[nodiscard]] static element
-string_view_to_element(std::string_view const string_view)
+string_view_to_element(std::string_view const source)
 {
-  if (g_name_element_map.find(string_view) == end(g_name_element_map))
+  auto const found = g_name_element_map.find(source);
+
+  if (found == end(g_name_element_map))
   {
     return element::undefined;
   }
 
-  return g_name_element_map.at(string_view);
+  return found->second;
 }
 
 } // namespace detail

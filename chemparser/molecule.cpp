@@ -5,6 +5,11 @@
 namespace chemparser
 {
 
+molecule::molecule(std::initializer_list<map_value_type> init,
+                   count_type coefficient) noexcept
+    : elements_(init), coefficient_(coefficient)
+{
+}
 molecule & molecule::set_coefficient(count_type const coefficient) noexcept
 {
   coefficient_ = coefficient;

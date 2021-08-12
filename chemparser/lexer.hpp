@@ -4,7 +4,6 @@
 #include "source_range.hpp"
 #include "token.hpp"
 
-#include <cctype>
 #include <exception>
 #include <iostream>
 #include <string_view>

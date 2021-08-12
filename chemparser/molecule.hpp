@@ -12,6 +12,14 @@ namespace chemparser
 class molecule
 {
 public:
+  using map_value_type =
+      typename std::unordered_map<element, count_type>::value_type;
+
+  molecule() noexcept = default;
+
+  molecule(std::initializer_list<map_value_type> init,
+           count_type coefficient = 1) noexcept;
+
   molecule & add_element(element element, count_type count = 1) noexcept;
 
   molecule & merge(molecule const & other) noexcept;
