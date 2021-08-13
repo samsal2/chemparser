@@ -1,6 +1,6 @@
 #pragma once
 
-#include "molecule.hpp"
+#include "chemparser/molecule.hpp"
 
 namespace chemparser::ast
 {

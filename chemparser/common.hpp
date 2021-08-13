@@ -12,11 +12,8 @@ using count_type = size_t;
 namespace detail
 {
 
-[[nodiscard]] static std::string
-view_to_string(std::string_view const view) noexcept
-{
-  return std::string(begin(view), end(view));
-}
+[[nodiscard]] std::string
+view_to_string(std::string_view const view) noexcept;
 
 template <typename This, typename That>
 concept same_as = requires

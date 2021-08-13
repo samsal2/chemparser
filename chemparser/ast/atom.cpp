@@ -1,4 +1,4 @@
-#include "ast/atom.hpp"
+#include "chemparser/ast/atom.hpp"
 
 namespace chemparser::ast
 {

@@ -1,6 +1,8 @@
 add_subdirectory(ast)
 
-target_sources(${PROJECT_NAME} PRIVATE common.hpp
+target_sources(${PROJECT_NAME} PRIVATE common.cpp
+                                       common.hpp
+                                       element.cpp
                                        element.hpp
                                        interpreter.cpp
                                        interpreter.hpp
@@ -11,4 +13,5 @@ target_sources(${PROJECT_NAME} PRIVATE common.hpp
                                        parser.cpp
                                        parser.hpp
                                        source_range.hpp
+                                       token.cpp
                                        token.hpp)

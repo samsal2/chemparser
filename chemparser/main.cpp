@@ -1,4 +1,4 @@
-#include "chemparser.hpp"
+#include "chemparser/chemparser.hpp"
 
 #include <iostream>
 

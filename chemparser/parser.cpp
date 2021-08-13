@@ -1,6 +1,6 @@
-#include "parser.hpp"
+#include "chemparser/parser.hpp"
 
-#include "ast/ast.hpp"
+#include "chemparser/ast/ast.hpp"
 
 #include <memory>
 #include <string>

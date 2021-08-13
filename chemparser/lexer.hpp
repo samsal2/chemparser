@@ -1,8 +1,8 @@
 #pragma once
 
-#include "common.hpp"
-#include "source_range.hpp"
-#include "token.hpp"
+#include "chemparser/common.hpp"
+#include "chemparser/source_range.hpp"
+#include "chemparser/token.hpp"
 
 #include <exception>
 #include <iostream>

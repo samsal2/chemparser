@@ -79,11 +79,6 @@ token::get_type_as_string() const noexcept
   return value_;
 }
 
-static std::ostream & operator<<(std::ostream & os, token const token)
-{
-  os << "type: " << token.get_type_as_string()
-     << ", value: " << token.value();
-  return os;
-}
+std::ostream & operator<<(std::ostream & os, token const token);
 
 } // namespace chemparser

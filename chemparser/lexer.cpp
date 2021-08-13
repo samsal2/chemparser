@@ -1,4 +1,4 @@
-#include "lexer.hpp"
+#include "chemparser/lexer.hpp"
 
 namespace chemparser
 {

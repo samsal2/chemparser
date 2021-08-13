@@ -1,4 +1,4 @@
-#include "molecule.hpp"
+#include "chemparser/molecule.hpp"
 
 #include <string>
 

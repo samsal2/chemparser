@@ -1,7 +1,7 @@
 #pragma once
 
-#include "common.hpp"
-#include "element.hpp"
+#include "chemparser/common.hpp"
+#include "chemparser/element.hpp"
 
 #include <ostream>
 #include <unordered_map>

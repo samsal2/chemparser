@@ -1,6 +1,6 @@
-#include "ast/scope.hpp"
+#include "chemparser/ast/scope.hpp"
 
-#include "molecule.hpp"
+#include "chemparser/molecule.hpp"
 
 #include <iostream>
 #include <numeric>

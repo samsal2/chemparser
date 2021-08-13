@@ -1,5 +1,5 @@
 #pragma once
 
-#include "ast/atom.hpp"
-#include "ast/node.hpp"
-#include "ast/scope.hpp"
+#include "chemparser/ast/atom.hpp"
+#include "chemparser/ast/node.hpp"
+#include "chemparser/ast/scope.hpp"

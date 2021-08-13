@@ -20,21 +20,12 @@ add_subdirectory(${PROJECT_NAME})
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_NAME})
 target_compile_options(${PROJECT_NAME} PRIVATE -O3 
-                                   -Weverything
-                                   -Werror
-                                   -Wpedantic
-                                   -pedantic-errors
-                                   -Wshadow
-                                   -Wno-old-style-cast
-                                   -Wno-documentation
-                                   -Wno-padded
-                                   -Wno-c++98-compat-pedantic
-                                   -Wno-c++98-compat
-                                   -Wno-documentation-unknown-command
-                                   -Wno-unused-template
-                                   -Wno-unused-function
-                                   -Wno-return-std-move-in-c++11
-                                   -Wno-exit-time-destructors
-                                   -Wno-global-constructors)
+                                     -Wall
+                                     -Wextra
+                                     -Werror
+                                     -Wpedantic
+                                     -pedantic-errors
+                                     -Wshadow)
+
+target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCE_DIR})

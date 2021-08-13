@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ast/node.hpp"
+#include "chemparser/ast/node.hpp"
 
 namespace chemparser::ast
 {

@@ -1,5 +1,5 @@
-#include "ast/ast.hpp"
-#include "lexer.hpp"
+#include "chemparser/ast/ast.hpp"
+#include "chemparser/lexer.hpp"
 
 namespace chemparser
 {

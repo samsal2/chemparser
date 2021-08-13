@@ -1,6 +1,6 @@
 #pragma once
 
-#include "parser.hpp"
+#include "chemparser/parser.hpp"
 
 namespace chemparser
 {

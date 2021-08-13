@@ -1,4 +1,4 @@
-#include "interpreter.hpp"
+#include "chemparser/interpreter.hpp"
 
 namespace chemparser
 {
