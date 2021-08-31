@@ -3,20 +3,14 @@
 #include "chemparser/ast/node.hpp"
 #include "chemparser/element.hpp"
 
-namespace chemparser::ast
-{
+namespace chemparser::ast {
 
-class atom final : public node
-{
+class atom final : public node {
 public:
   constexpr atom(element element, count_type count)
-      : count_(count), element_(element)
-  {
-  }
+      : count_(count), element_(element) {}
 
-  constexpr explicit atom(element element) : element_(element)
-  {
-  }
+  constexpr explicit atom(element element) : element_(element) {}
 
   [[nodiscard]] molecule execute() const noexcept override;
 

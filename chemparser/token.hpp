@@ -3,14 +3,11 @@
 #include <ostream>
 #include <string_view>
 
-namespace chemparser
-{
+namespace chemparser {
 
-class token
-{
+class token {
 public:
-  enum class type
-  {
+  enum class type {
     undefined = 0,
     element,
     left_parenthesis,
@@ -26,8 +23,7 @@ public:
 
   [[nodiscard]] constexpr type get_type() const noexcept;
 
-  [[nodiscard]] constexpr std::string_view
-  get_type_as_string() const noexcept;
+  [[nodiscard]] constexpr std::string_view get_type_as_string() const noexcept;
 
   [[nodiscard]] constexpr std::string_view value() const noexcept;
 
@@ -37,20 +33,15 @@ private:
 };
 
 constexpr token::token(type const type, std::string_view const value)
-    : type_(type), value_(value)
-{
-}
+    : type_(type), value_(value) {}
 
-[[nodiscard]] constexpr token::type token::get_type() const noexcept
-{
+[[nodiscard]] constexpr token::type token::get_type() const noexcept {
   return type_;
 }
 
 [[nodiscard]] constexpr std::string_view
-token::get_type_as_string() const noexcept
-{
-  switch (type_)
-  {
+token::get_type_as_string() const noexcept {
+  switch (type_) {
   case token::type::undefined:
     return "undefined";
 
@@ -74,11 +65,10 @@ token::get_type_as_string() const noexcept
   }
 }
 
-[[nodiscard]] constexpr std::string_view token::value() const noexcept
-{
+[[nodiscard]] constexpr std::string_view token::value() const noexcept {
   return value_;
 }
 
-std::ostream & operator<<(std::ostream & os, token const token);
+std::ostream &operator<<(std::ostream &os, token const token);
 
 } // namespace chemparser

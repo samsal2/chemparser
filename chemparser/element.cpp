@@ -1,27 +1,24 @@
 
 #include "chemparser/element.hpp"
 
-namespace chemparser::detail
-{
+namespace chemparser::detail {
 
-static const std::unordered_map<std::string_view, element>
-    g_name_element_map = {{"undefined", element::undefined},
-                          {"H", element::H},
-                          {"Li", element::Li},
-                          {"Na", element::Na},
-                          {"O", element::O},
-                          {"Al", element::Al},
-                          {"Be", element::Be},
-                          {"Si", element::Si},
-                          {"K", element::K},
-                          {"S", element::S},
-                          {"N", element::N}};
+static const std::unordered_map<std::string_view, element> g_name_element_map =
+    {{"undefined", element::undefined},
+     {"H", element::H},
+     {"Li", element::Li},
+     {"Na", element::Na},
+     {"O", element::O},
+     {"Al", element::Al},
+     {"Be", element::Be},
+     {"Si", element::Si},
+     {"K", element::K},
+     {"S", element::S},
+     {"N", element::N}};
 
 [[nodiscard]] std::string_view
-element_to_string_view(element const element) noexcept
-{
-  switch (element)
-  {
+element_to_string_view(element const element) noexcept {
+  switch (element) {
   case element::undefined:
     return "undefined";
 
@@ -57,11 +54,9 @@ element_to_string_view(element const element) noexcept
   }
 }
 
-[[nodiscard]] element string_view_to_element(std::string_view const source)
-{
+[[nodiscard]] element string_view_to_element(std::string_view const source) {
   if (auto const found = g_name_element_map.find(source);
-      found != end(g_name_element_map))
-  {
+      found != end(g_name_element_map)) {
     return found->second;
   }
 

@@ -5,29 +5,23 @@
 #include <memory>
 #include <string>
 
-namespace chemparser
-{
+namespace chemparser {
 
-parse_error::parse_error(token token, std::string_view message)
-{
+parse_error::parse_error(token token, std::string_view message) {
   auto type_string = detail::view_to_string(token.get_type_as_string());
   auto msg_string = detail::view_to_string(message);
   message_ = "Token was: " + type_string + "\n" + msg_string;
 }
 
-[[nodiscard]] char const * parse_error::what() const noexcept
-{
+[[nodiscard]] char const *parse_error::what() const noexcept {
   return message_.c_str();
 }
 
-[[nodiscard]] std::unique_ptr<ast::node> parser::parse_scope()
-{
+[[nodiscard]] std::unique_ptr<ast::node> parser::parse_scope() {
   auto current_scope = std::make_unique<ast::scope>();
 
-  while (true)
-  {
-    switch (current_type())
-    {
+  while (true) {
+    switch (current_type()) {
     case token::type::left_parenthesis:
       consume(token::type::left_parenthesis);
       current_scope->add_child(parse_scope());
@@ -35,8 +29,7 @@ parse_error::parse_error(token token, std::string_view message)
 
     case token::type::right_parenthesis:
       consume(token::type::right_parenthesis);
-      if (current_type() == token::type::coefficient)
-      {
+      if (current_type() == token::type::coefficient) {
         current_scope->set_coefficient(parse_coefficient());
       }
       [[fallthrough]];
@@ -56,14 +49,12 @@ parse_error::parse_error(token token, std::string_view message)
   }
 }
 
-[[nodiscard]] std::unique_ptr<ast::node> parser::parse_atom()
-{
+[[nodiscard]] std::unique_ptr<ast::node> parser::parse_atom() {
   auto const element_token = consume(token::type::element);
   auto const element_value = element_token.value();
   auto const element = detail::string_view_to_element(element_value);
 
-  if (current_type() != token::type::element_count)
-  {
+  if (current_type() != token::type::element_count) {
     return std::make_unique<ast::atom>(element);
   }
 
@@ -74,8 +65,7 @@ parse_error::parse_error(token token, std::string_view message)
   return std::make_unique<ast::atom>(element, count);
 }
 
-[[nodiscard]] count_type parser::parse_coefficient()
-{
+[[nodiscard]] count_type parser::parse_coefficient() {
   auto const count_token = consume(token::type::coefficient);
   auto const count_value = count_token.value();
   return static_cast<count_type>(

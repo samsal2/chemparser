@@ -5,11 +5,9 @@
 #include <memory>
 #include <vector>
 
-namespace chemparser::ast
-{
+namespace chemparser::ast {
 
-class scope : public node
-{
+class scope : public node {
 public:
   scope() noexcept = default;
 
@@ -24,8 +22,7 @@ private:
   std::vector<std::unique_ptr<node>> children_;
 };
 
-constexpr void scope::set_coefficient(size_t coefficient) noexcept
-{
+constexpr void scope::set_coefficient(size_t coefficient) noexcept {
   coefficient_ = coefficient;
 }
 

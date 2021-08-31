@@ -4,20 +4,16 @@
 #include <string>
 #include <string_view>
 
-namespace chemparser
-{
+namespace chemparser {
 
 using count_type = size_t;
 
-namespace detail
-{
+namespace detail {
 
-[[nodiscard]] std::string
-view_to_string(std::string_view const view) noexcept;
+[[nodiscard]] std::string view_to_string(std::string_view const view) noexcept;
 
 template <typename This, typename That>
-concept same_as = requires
-{
+concept same_as = requires {
   requires std::is_same_v<This, That>;
   requires std::is_same_v<That, This>;
 };

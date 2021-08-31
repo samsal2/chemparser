@@ -1,12 +1,9 @@
 #include "chemparser/interpreter.hpp"
 
-namespace chemparser
-{
+namespace chemparser {
 
-[[nodiscard]] molecule interpreter::interpret()
-{
-  if (parser_.current_type() != token::type::coefficient)
-  {
+[[nodiscard]] molecule interpreter::interpret() {
+  if (parser_.current_type() != token::type::coefficient) {
     return parser_.parse_scope()->execute();
   }
 

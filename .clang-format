@@ -1,10 +1,6 @@
 ﻿---
 BasedOnStyle: LLVM
-BreakBeforeBraces: Allman
-ColumnLimit: 78
-PointerAlignment: Middle
-AlwaysBreakTemplateDeclarations: Yes
-UseTab: Never
-AllowShortFunctionsOnASingleLine: None
-AllowShortLambdasOnASingleLine: None
+ColumnLimit: 79
+IncludeBlocks: Regroup
+UseTab : Never
 ...

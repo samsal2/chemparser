@@ -2,15 +2,11 @@
 
 #include "chemparser/parser.hpp"
 
-namespace chemparser
-{
+namespace chemparser {
 
-class interpreter
-{
+class interpreter {
 public:
-  explicit interpreter(parser parser) : parser_(parser)
-  {
-  }
+  explicit interpreter(parser parser) : parser_(parser) {}
 
   [[nodiscard]] molecule interpret();
 

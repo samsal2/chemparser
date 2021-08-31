@@ -1,10 +1,8 @@
 #include "chemparser/ast/atom.hpp"
 
-namespace chemparser::ast
-{
+namespace chemparser::ast {
 
-[[nodiscard]] molecule atom::execute() const noexcept
-{
+[[nodiscard]] molecule atom::execute() const noexcept {
   return {{element_, count_}};
 }
 

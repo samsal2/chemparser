@@ -1,7 +1,6 @@
 #include "chemparser/ast/node.hpp"
 
-namespace chemparser::ast
-{
+namespace chemparser::ast {
 
 node::~node() = default;
 

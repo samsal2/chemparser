@@ -1,11 +1,10 @@
 
 #include "chemparser/common.hpp"
 
-namespace chemparser::detail
-{
+namespace chemparser::detail {
 
-[[nodiscard]] std::string view_to_string(std::string_view const view) noexcept
-{
+[[nodiscard]] std::string
+view_to_string(std::string_view const view) noexcept {
   return std::string(begin(view), end(view));
 }
 
