@@ -2,6 +2,6 @@
 
 namespace chemparser::ast {
 
-node::~node() = default;
+node::~node() noexcept = default;
 
 }

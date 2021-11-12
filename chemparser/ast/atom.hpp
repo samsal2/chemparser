@@ -7,10 +7,10 @@ namespace chemparser::ast {
 
 class atom final : public node {
 public:
-  constexpr atom(element element, count_type count)
+  constexpr atom(element element, count_type count) noexcept
       : count_(count), element_(element) {}
 
-  constexpr explicit atom(element element) : element_(element) {}
+  constexpr explicit atom(element element) noexcept : element_(element) {}
 
   [[nodiscard]] molecule execute() const noexcept override;
 

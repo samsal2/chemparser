@@ -10,7 +10,7 @@ using count_type = size_t;
 
 namespace detail {
 
-[[nodiscard]] std::string view_to_string(std::string_view const view) noexcept;
+[[nodiscard]] std::string view_to_string(std::string_view view) noexcept;
 
 template <typename This, typename That>
 concept same_as = requires {
